@@ -1,13 +1,17 @@
 #include "MyString.h"
 #include <iostream>
+#include<locale>
 
 using namespace std;
 
 MyString::MyString() {
+	//setlocale(LC_ALL, "Russian");
+	system("chcp 1251 > nul");
 	string = nullptr;
 	string_length = 0;
 	char a;
 	while (cin) {
+		
 		cin >> noskipws >> a;
 		if (a == '\n') break;
 		append(a);
@@ -20,6 +24,11 @@ MyString::MyString() {
 
 MyString::MyString(const char* str)
 {
+	system("chcp 1251 > nul");
+	string = nullptr;
+	string_length = 0;
+	append(str);
+	/*
 	string_length = str_length(str);
 	string = new char[string_length +1];
 	for (int i = 0; i < string_length; ++i)
@@ -27,6 +36,7 @@ MyString::MyString(const char* str)
 		*(string + i) = *(str + i);
 	}
 	string[string_length] = '\0';
+	*/
 			
 }
 
@@ -57,6 +67,7 @@ void MyString::text_to_upper() {
 }
 
 void MyString::Text() {
+	
 	if (string != nullptr) {
 		for (int i = 0; i < str_length(string); ++i)
 		{

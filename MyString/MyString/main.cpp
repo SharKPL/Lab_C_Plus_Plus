@@ -4,11 +4,10 @@
 using namespace std;
 
 int main() {
-	setlocale(LC_ALL, "Russian");
 
 	MyString str = MyString();
 
-	//MyString str("sadasd");
+	//MyString str("פûגפûגû");
 
 	str.Text();
 	//cout << str.length() << endl;
